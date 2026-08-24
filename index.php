@@ -22,11 +22,12 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     <title>Document</title>
 </head>
 <body>
+
     <form method="POST">
         <button
-        type="submit"
-        name="action"
+        type="submit"name="action"
         >Sample</button>
+        
 </form>    
     
 </body>
