@@ -13,6 +13,8 @@ logActivity(
     'success'
 );
 
+
+
 // Activity Logs Query #3
 $stmt = $pdo->query("
     SELECT *
