@@ -1,6 +1,5 @@
 <?php
 require_once 'config/config.php';
-require_once 'config/functions.php';
 
 if(isset($_SESSION['user_id'])){
     header('Location: ' . BASE_URL . '/app/' . $_SESSION['user_role'] . '/index.php');
@@ -22,13 +21,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
     } else {
 
-    // Log incomplete login attempt
-        logActivity($pdo,$_SESSION['user_id'],$_SESSION['user_email'],'login','success');
 
     if(loginUser($pdo,$login,$password)){
         echo 'Location: ' . BASE_URL . '/app' . $_SESSION['user_role'] . '/index.php';
         header('Location: ' . BASE_URL . '/app/' . $_SESSION['user_role'] . '/index.php');
         exit;
+            // Log incomplete login attempt
+        logActivity($pdo,$_SESSION['user_id'],$_SESSION['user_email'],'login','success');
+
 
     }
     }

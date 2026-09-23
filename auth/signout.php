@@ -1,12 +1,12 @@
 <?php
 require_once '../config/config.php';
 
-if(assist($_SESSION['user_id'])){
+if(isset($_SESSION['user_id'])){
     logActivity(
         $pdo,
         $_SESSION['user_id'],
             $_SESSION['user_email'],
-            'logout'
+            'logout','
             success'
 
         
